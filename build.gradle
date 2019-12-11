@@ -1,0 +1,44 @@
+plugins {
+	id 'java'
+	id 'eclipse'
+	id 'maven'
+}
+
+group = 'java.org.fourthline'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+	maven {
+		url "http://4thline.org/m2/"
+	}
+}
+dependencies {
+	// https://mvnrepository.com/artifact/org.seamless/seamless-util
+	compile group: 'org.seamless', name: 'seamless-util', version: '1.1.2'
+	compile group: 'org.seamless', name: 'seamless-xml', version: '1.1.2'
+	compile group: 'org.seamless', name: 'seamless-http', version: '1.1.2'
+	// https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-server
+	compile group: 'org.eclipse.jetty', name: 'jetty-server', version: '8.2.0.v20160908'
+	compile group: 'org.eclipse.jetty', name: 'jetty-servlet', version: '8.2.0.v20160908'
+	compile group: 'org.eclipse.jetty', name: 'jetty-client', version: '8.2.0.v20160908'
+
+
+	// https://mvnrepository.com/artifact/net.sf.kxml/kxml2
+	compileOnly group: 'net.sf.kxml', name: 'kxml2', version: '2.3.0'
+
+	// https://mvnrepository.com/artifact/com.google.android/android
+	compile  group: 'com.google.android', name: 'android', version: '4.1.1.4'
+	// https://mvnrepository.com/artifact/javax.enterprise/cdi-api
+	compileOnly  group: 'javax.enterprise', name: 'cdi-api', version: '2.0'
+
+	// https://mvnrepository.com/artifact/org.testng/testng
+	testCompile group: 'org.testng', name: 'testng', version: '6.8'
+
+}
+test {
+	 useTestNG() {
+         suites 'src/test/AllTests.tng.xml'
+	 }
+ }
