@@ -173,6 +173,7 @@ public class DeviceDetails implements Validatable {
     }
     public Map<String,String> getDeviceDetialsMap(){
     	Map<String,String> map = new HashMap<String,String>();
+    	map.put("DeviceDescription", this.friendlyName);
     	map.put("SerialNumber", serialNumber);
     	map.put("ups", upc);
     	map.put("Manufacturer", manufacturerDetails.getManufacturer());
